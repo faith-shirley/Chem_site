@@ -1,5 +1,9 @@
 // components/Header.tsx
 'use client'
+// import { profile } from 'console';
+
+// Example: Replace with your actual user profile logic
+const profile = { role: 'admin' }; // Replace this with real authentication/user context
 import Link from 'next/link';
 
 export default function Header() {
@@ -11,6 +15,10 @@ export default function Header() {
         <Link href="/products">Products</Link>
         <Link href="/dashboard">Dashboard</Link>
         <Link href="/login">Login</Link>
+        <Link href="/cart">Cart</Link>
+        {profile?.role === 'admin' && (
+  <a href="/admin" className="text-sm text-blue-500 underline">Admin</a>
+)}
       </nav>
     </header>
   );
